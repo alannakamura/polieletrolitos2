@@ -17,14 +17,14 @@ p.params['relaxation_tax'] = 7e-3
 p.params['error'] = 1e-4
 p.params['dirichlet_boundary'] = [False, True, False, True]
 # p.params['y0'] = -4*np.pi*p.params['lb']*1e-4*30
-p.params['y0'] = -0.1
+p.params['y0'] = 0.0
 p.params['yn'] = 0.0
 
 t = ''
 for i in p.params['dirichlet_boundary']:
     t = t+str(i).lower()[0]
 
-filename = 'simulacoesAntigas/210726/exp1/'
+filename = '260805/fig6/'
 filename += 'phib2_'
 filename += str(p.params['phib2'])
 filename += '_w2_'
@@ -39,14 +39,12 @@ filename += '_f_'
 filename += str(p.params['f'])
 filename += '_v_'
 filename += str(p.params['v'])
-filename += '_c_'
+filename += '_s_'
 filename += str(p.params['c_salt'])
 filename += '_y0_'
 filename += str(p.params['y0'])
 filename += '_t_'
 filename += t
-filename += '_salt_'
-filename += str(p.params['c_salt'])
 filename += '.pkl'
 
 p.set_filename(filename)
