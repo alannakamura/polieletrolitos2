@@ -16,15 +16,15 @@ p.params['phib2']=1e-3
 p.params['relaxation_tax'] = 7e-3
 p.params['error'] = 1e-4
 p.params['dirichlet_boundary'] = [False, True, False, True]
-# p.params['y0'] = -4*np.pi*p.params['lb']*1e-4*30
-p.params['y0'] = 0.0
+p.params['y0'] = -4*np.pi*p.params['lb']*1e-4*30
+# p.params['y0'] = -0.5
 p.params['yn'] = 0.0
 
 t = ''
 for i in p.params['dirichlet_boundary']:
     t = t+str(i).lower()[0]
 
-filename = '260805/fig6/'
+filename = '260805/fig8/'
 filename += 'phib2_'
 filename += str(p.params['phib2'])
 filename += '_w2_'
