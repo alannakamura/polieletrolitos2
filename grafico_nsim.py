@@ -3,13 +3,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-diretorio = "260805/fig8/"
+diretorio = "260805/fig10/"
 # diretorio = "200526/exp1/"
 list_dir = os.listdir(diretorio)
 
-atributo = ['phib2', 'w2', 'xn', 'nx', 'lambda', 'f', 'v','y0','salt']
+atributo = ['phib2', 'w2', 'xn', 'nx', 'lambda', 'f', 'v','y0','s']
 # atributo = ['phib2', 'w2', 'xn', 'nx', 'lambda', 'f', 'v']
-atributo = atributo[-2]
+atributo = atributo[-1]
 atributo = list_dir[0].split('_').index(atributo)
 
 # varios graficos de um diretorio
