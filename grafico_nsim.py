@@ -3,13 +3,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-diretorio = "260805/fig16/"
-# diretorio = "200526/exp1/"
+diretorio = "260805/fig1/"
+# diretorio = "200526/fig1/"
 list_dir = os.listdir(diretorio)
 
 atributo = ['phib2', 'w2', 'xn', 'nx', 'lambda', 'f', 'v','y0','s']
 # atributo = ['phib2', 'w2', 'xn', 'nx', 'lambda', 'f', 'v']
-atributo = atributo[-4]
+atributo = atributo[-2]
 atributo = list_dir[0].split('_').index(atributo)
 
 # varios graficos de um diretorio
@@ -43,8 +43,8 @@ params = []
 for i in list_dir:
     f = open(diretorio+i[1], 'rb')
     l = pickle.load(f)
-    # x_list.append(l[0]/l[2]['xn'])
-    x_list.append(l[0] / 1)
+    x_list.append(l[0]/l[2]['xn'])
+    # x_list.append(l[0] / 1)
     y_list.append(l[1][0::2])
     e_list.append(l[1][1::2])
     c_neg.append((l[-1]['c_salt'] + l[-1]['f']*l[-1]['phib2'])*np.exp(l[1][0::2]))
@@ -81,7 +81,7 @@ size = 20
 plt.title(l, fontsize=size)
 # plt.subplot(1,2,1)
 for i in range(len(x_list)):
-    plt.plot(x_list[i], y_list[i], color = (red[i], green[i], blue[i]), linestyle = linestyle2[i])
+    plt.plot(x_list[i], y_list[i], color = (red[i], green[i], blue[i]), linestyle = linestyle2[i%4])
 plt.legend(t_list, fontsize=size)
 plt.xlabel('$x/x_n$', fontsize=size)
 plt.ylabel('y', fontsize=size, rotation=0, labelpad=35)
@@ -99,7 +99,7 @@ eta_p = np.tanh(x_list[0]*D/csi)**2
 
 plt.title(l, fontsize=size)
 for i in range(len(x_list)):
-    plt.plot(x_list[i], e_list[i]**2, color = (red[i], green[i], blue[i]), linestyle = linestyle2[i])
+    plt.plot(x_list[i], e_list[i]**2, color = (red[i], green[i], blue[i]), linestyle = linestyle2[i%4])
 # plt.plot(x_list[0], eta_p, 'g')
 # plt.plot( x_list[0], np.ones((len(x_list[0]), 1)), color = (0, 0.5, 0))
 plt.xlabel('$x/x_n$', fontsize=size)
