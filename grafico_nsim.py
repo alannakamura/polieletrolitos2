@@ -3,13 +3,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-diretorio = "260805/fig1/"
+diretorio = "260805/fig12/"
 # diretorio = "200526/fig1/"
 list_dir = os.listdir(diretorio)
 
 atributo = ['phib2', 'w2', 'xn', 'nx', 'lambda', 'f', 'v','y0','s']
 # atributo = ['phib2', 'w2', 'xn', 'nx', 'lambda', 'f', 'v']
-atributo = atributo[-2]
+atributo = atributo[-1]
 atributo = list_dir[0].split('_').index(atributo)
 
 # varios graficos de um diretorio
@@ -21,8 +21,8 @@ list_dir.sort(reverse=False)
 # pegar uma faixa de graficos de um diretorio
 # inicio = -2
 # fim = -1
-# list_dir = [list_dir[3]]
-# list_dir = list_dir[1:]
+# list_dir = [list_dir[0]]
+# list_dir = list_dir[-2:]
 
 # simulacao de 1 grafico
 # list_dir = 'teste_artigo1_phib2_4e-05_w2_0.0_xn_120_nx_4097_lambda_0.007_f_0.1.pkl'
@@ -70,16 +70,36 @@ l = str.join('_', l2)
 red = np.linspace(1.,0., len(list_dir))
 green = np.linspace(0,0., len(list_dir))
 blue = np.linspace(0.,1., len(list_dir))
-linestyle2 = ['-', (0, (10, 5)), ':', '-.']
+linestyle2 = ['solid', 'dashed', 'dashdot', (0, (6, 2, 6, 4))]
 fig, ax = plt.subplots()
 
 # colours = []
 # for i in range(len(x_list)):
 #     colours.append('#'+str(hex(15-i)[-1])+'0'+str(hex(i)[-1]))
 
+size = 30
+for i in range(len(x_list)):
+    plt.plot(x_list[i], y_list[i], color = (red[i], green[i], blue[i]), linestyle = linestyle2[i%4])
+plt.xlabel('$x/x_n$', fontsize=size)
+plt.ylabel('y', fontsize=size, rotation=0, labelpad=35)
+plt.xticks(fontsize=size)
+plt.yticks(fontsize=size)
+plt.subplots_adjust(left=0.18, right=0.85, bottom=0.18, top=0.85)
+plt.show()
+
+for i in range(len(x_list)):
+    plt.plot(x_list[i], e_list[i]**2, color = (red[i], green[i], blue[i]), linestyle = linestyle2[i%4])
+# plt.plot(x_list[0], eta_p, 'g')
+# plt.plot( x_list[0], np.ones((len(x_list[0]), 1)), color = (0, 0.5, 0))
+plt.xlabel('$x/x_n$', fontsize=size)
+plt.ylabel('$\eta^2$', fontsize=size, rotation=0, labelpad=35)
+plt.subplots_adjust(left=0.18, right=0.85, bottom=0.18, top=0.85)
+plt.xticks(fontsize=size)
+plt.yticks(fontsize=size)
+plt.show()
+
 size = 20
 plt.title(l, fontsize=size)
-# plt.subplot(1,2,1)
 for i in range(len(x_list)):
     plt.plot(x_list[i], y_list[i], color = (red[i], green[i], blue[i]), linestyle = linestyle2[i%4])
 plt.legend(t_list, fontsize=size)
@@ -87,15 +107,8 @@ plt.xlabel('$x/x_n$', fontsize=size)
 plt.ylabel('y', fontsize=size, rotation=0, labelpad=35)
 plt.xticks(fontsize=size)
 plt.yticks(fontsize=size)
-# plt.savefig(diretorio +'1.pdf')
+plt.subplots_adjust(left=0.18, right=0.85, bottom=0.18, top=0.85)
 plt.show()
-
-a = params[0]['a']
-v = abs(params[0]['v'])
-D = params[0]['D']
-phib2 = params[0]['phib2']
-csi = a/np.sqrt(3*v*phib2)
-eta_p = np.tanh(x_list[0]*D/csi)**2
 
 plt.title(l, fontsize=size)
 for i in range(len(x_list)):
