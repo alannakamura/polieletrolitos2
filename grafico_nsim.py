@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-diretorio = "260805/fig12/"
+diretorio = "260805/fig10/"
 # diretorio = "200526/fig1/"
 list_dir = os.listdir(diretorio)
 
