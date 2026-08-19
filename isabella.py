@@ -9,7 +9,7 @@ k = 8 * np.pi * lb * c_salt
 # k = 1
 print('k', k)
 
-c = -1e-6 #contorno
+c = -1 #contorno
 # d = 2
 d = 0
 l = 4
