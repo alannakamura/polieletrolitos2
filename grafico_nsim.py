@@ -3,13 +3,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-diretorio = "260805/fig4/"
+diretorio = "260805/fig2/"
 # diretorio = "200526/fig1/"
 list_dir = os.listdir(diretorio)
 
 atributo = ['phib2', 'w2', 'xn', 'nx', 'lambda', 'f', 'v','y0','s']
 # atributo = ['phib2', 'w2', 'xn', 'nx', 'lambda', 'f', 'v']
-atributo = atributo[-2]
+atributo = atributo[0]
 atributo = list_dir[0].split('_').index(atributo)
 
 # varios graficos de um diretorio
@@ -22,7 +22,7 @@ list_dir.sort(reverse=False)
 # inicio = -2
 # fim = -1
 # list_dir = [list_dir[0]]
-list_dir = list_dir[0:-1]
+# list_dir = list_dir[0:-1]
 
 # simulacao de 1 grafico
 # list_dir = 'teste_artigo1_phib2_4e-05_w2_0.0_xn_120_nx_4097_lambda_0.007_f_0.1.pkl'
@@ -70,7 +70,7 @@ l = str.join('_', l2)
 red = np.linspace(1.,0., len(list_dir))
 green = np.linspace(0,0., len(list_dir))
 blue = np.linspace(0.,1., len(list_dir))
-linestyle2 = ['solid', 'dashed', 'dashdot', (0, (6, 2, 6, 4))]
+linestyle2 = ['solid', (0, (6, 2, 6, 4)), 'dashed', 'dashdot']
 fig, ax = plt.subplots()
 
 # colours = []
