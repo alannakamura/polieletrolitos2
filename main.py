@@ -3,18 +3,18 @@ import numpy as np
 
 p = Polieletrolito(gpu=False)
 
-filename = '260805/shafir1/'
+filename = '260821/fig9/'
 
 inicio1 = time.perf_counter()
 
-p.params['nx'] = int(2**13)
+p.params['nx'] = int(2**12)
 p.params['nx'] += 1
-p.params['xn'] = 30*2
+p.params['xn'] = 30*4
 p.params['f'] = 0.05
 p.params['v'] = 0.1
 p.params['c_salt'] = 3.01e-7
 p.params['w2'] = 1500
-p.params['phib2']=1e-6
+p.params['phib2']=1e-3
 p.params['relaxation_tax'] = 7e-3
 p.params['error'] = 1e-4
 p.params['dirichlet_boundary'] = [False, True, False, True]
