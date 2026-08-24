@@ -34,6 +34,6 @@ dados_fig5 = np.array([
     [0.085997, -0.0159111]
 ])
 
-plt.plot(dados_fig4[:,0], dados_fig4[:,1],'r')
-plt.plot(dados_fig5[:,0], dados_fig5[:,1],'b')
-plt.show()
+# plt.plot(dados_fig4[:,0], dados_fig4[:,1],'r')
+# plt.plot(dados_fig5[:,0], dados_fig5[:,1],'b')
+# plt.show()

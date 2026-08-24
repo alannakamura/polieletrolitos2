@@ -4,13 +4,13 @@ import numpy as np
 import os
 from testeAnalitico import *
 
-diretorio = "260821/fig9/"
+diretorio = "260824/fig4/"
 # diretorio = "200526/fig1/"
 list_dir = os.listdir(diretorio)
 
 atributo = ['phib2', 'w2', 'xn', 'nx', 'lambda', 'f', 'v','y0','s']
 # atributo = ['phib2', 'w2', 'xn', 'nx', 'lambda', 'f', 'v']
-atributo = atributo[-1]
+atributo = atributo[-2]
 atributo = list_dir[0].split('_').index(atributo)
 
 # varios graficos de um diretorio
@@ -81,6 +81,7 @@ fig, ax = plt.subplots()
 size = 30
 for i in range(len(x_list)):
     plt.plot(x_list[i], y_list[i], color = (red[i], green[i], blue[i]), linestyle = linestyle2[i%4])
+plt.plot(dados_fig4[:, 0], dados_fig4[:, 1], color = 'blue', linestyle = linestyle2[1])
 plt.xlabel('$x/x_n$', fontsize=size)
 plt.ylabel('y', fontsize=size, rotation=0, labelpad=35)
 plt.xticks(fontsize=size)
@@ -103,6 +104,7 @@ size = 20
 plt.title(l, fontsize=size)
 for i in range(len(x_list)):
     plt.plot(x_list[i], y_list[i], color = (red[i], green[i], blue[i]), linestyle = linestyle2[i%4])
+plt.plot(dados_fig5[:, 0], dados_fig5[:, 1], color = 'green', linestyle = linestyle2[1])
 plt.legend(t_list, fontsize=size)
 plt.xlabel('$x/x_n$', fontsize=size)
 plt.ylabel('y', fontsize=size, rotation=0, labelpad=35)
