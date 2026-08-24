@@ -2,8 +2,9 @@ import pickle
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+from testeAnalitico import *
 
-diretorio = "260805/fig6/"
+diretorio = "260821/fig9/"
 # diretorio = "200526/fig1/"
 list_dir = os.listdir(diretorio)
 
