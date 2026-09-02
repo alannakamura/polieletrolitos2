@@ -85,7 +85,7 @@ plt.ylabel('y', fontsize=size, rotation=0, labelpad=35)
 plt.xticks(fontsize=size)
 plt.yticks(fontsize=size)
 plt.subplots_adjust(left=0.18, right=0.85, bottom=0.18, top=0.85)
-plt.xlim(right = 0.6)
+# plt.xlim(right = 0.6)
 plt.show()
 
 for i in range(len(x_list)):
@@ -97,7 +97,7 @@ plt.ylabel('$\eta^2$', fontsize=size, rotation=0, labelpad=35)
 plt.subplots_adjust(left=0.18, right=0.85, bottom=0.18, top=0.85)
 plt.xticks(fontsize=size)
 plt.yticks(fontsize=size)
-plt.xlim(right = 0.6)
+# plt.xlim(right = 0.6)
 plt.show()
 
 size = 20
