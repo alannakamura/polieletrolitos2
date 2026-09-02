@@ -3,13 +3,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-diretorio = "260805/fig6/"
+diretorio = "260902/fig12/"
 # diretorio = "200526/fig1/"
 list_dir = os.listdir(diretorio)
 
 atributo = ['phib2', 'w2', 'xn', 'nx', 'lambda', 'f', 'v','y0','s']
 # atributo = ['phib2', 'w2', 'xn', 'nx', 'lambda', 'f', 'v']
-atributo = atributo[-1]
+atributo = atributo[-4]
 atributo = list_dir[0].split('_').index(atributo)
 
 # varios graficos de um diretorio
@@ -85,6 +85,7 @@ plt.ylabel('y', fontsize=size, rotation=0, labelpad=35)
 plt.xticks(fontsize=size)
 plt.yticks(fontsize=size)
 plt.subplots_adjust(left=0.18, right=0.85, bottom=0.18, top=0.85)
+plt.xlim(right = 0.6)
 plt.show()
 
 for i in range(len(x_list)):
@@ -96,6 +97,7 @@ plt.ylabel('$\eta^2$', fontsize=size, rotation=0, labelpad=35)
 plt.subplots_adjust(left=0.18, right=0.85, bottom=0.18, top=0.85)
 plt.xticks(fontsize=size)
 plt.yticks(fontsize=size)
+plt.xlim(right = 0.6)
 plt.show()
 
 size = 20
