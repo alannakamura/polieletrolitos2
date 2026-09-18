@@ -3,7 +3,7 @@ import numpy as np
 
 p = Polieletrolito(gpu=False)
 
-filename = '260902/fig11/'
+filename = '260918/fig11/'
 
 inicio1 = time.perf_counter()
 
