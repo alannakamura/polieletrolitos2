@@ -3,7 +3,7 @@ import numpy as np
 
 p = Polieletrolito(gpu=False)
 
-filename = '260902/fig12_1/'
+filename = '260902/fig11/'
 
 inicio1 = time.perf_counter()
 
@@ -14,7 +14,7 @@ p.params['f'] = 0.14
 p.params['v'] = 0.1
 # p.params['c_salt'] = 3.01e-7
 p.params['w2'] = 1500
-p.params['phib2']=1e-3
+p.params['phib2']=1e-6
 p.params['relaxation_tax'] = 7e-3
 p.params['error'] = 1e-4
 p.params['dirichlet_boundary'] = [False, True, False, True]
